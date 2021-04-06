@@ -1,0 +1,92 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- cumprimentar:
+   use_entities: true
+- saldo_VR:
+    use_entities: true
+- data_VR:
+    use_entities: true
+- valor_VR:
+    use_entities: true
+- beneficios:
+    use_entities: true
+- tempo_empresa:
+    use_entities: true
+- valor_salario:
+    use_entities: true
+- banco_horas:
+    use_entities: true
+- relatorios:
+    use_entities: true
+- saldo_ferias:
+    use_entities: true
+- pegar_ferias:
+    use_entities: true
+- despedida:
+    use_entities: true
+- hello_world:
+    use_entities: true
+- relatorio_colaborador:
+    use_entities: true
+- relatorio_gestor:
+    use_entities: true
+#- affirm:
+#    use_entities: true
+#- deny:
+#    use_entities: true
+#- mood_great:
+#    use_entities: true
+#- mood_unhappy:
+#    use_entities: true
+#- bot_challenge:
+#    use_entities: true
+
+entities: []
+slots:
+    colaborador:
+        type: text
+        initial_value: "human"
+    id_colaborador:
+        type: text
+        initial_value: ""
+responses:
+  utter_cumprimentar:
+  - text: Olá :D
+  utter_data_VR:
+  - text: O vale entra antes do primeiro dia de cada mês.
+  utter_valor_VR:
+  - text: O vale tem o valor de R$ 22,15 por dia de trabalho.
+  utter_despedida:
+  - text: Até logo!
+  utter_pegar_ferias:
+  - text: Combine com o seu gestor(a) o melhor período.
+  utter_beneficios:
+  - text: Os nossos benefícios são os seguintes -><br>Plano de saúde<br><br>Vale alimentação ou refeição<br><br>Fruta diariamente<br><br>Seguro de vida<br><br>Presente de aniversário<br><br>Auxílio inglês<br><br>Plano de saúdade<br><br>Auxílio pós-graduação
+#   utter_cheer_up:
+#   - image: https://i.imgur.com/nGF1K8f.jpg
+#     text: 'Here is something to cheer you up:'
+#   utter_did_that_help:
+#   - text: Did that help you?
+#   utter_happy:
+#   - text: Great, carry on!
+#   utter_despedida:
+#   - text: Até logo!
+#   utter_iamabot:
+#   - text: I am a bot, powered by Rasa.
+actions:
+- action_hello_world
+- action_tempo_empresa
+- action_saldo_VR
+- action_valor_salario
+- action_banco_horas
+- action_saldo_ferias
+- action_relatorios
+- action_relatorio_gestor
+- action_relatorio_colaborador
+forms: {}
+e2e_actions: []
