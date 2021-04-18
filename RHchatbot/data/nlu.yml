@@ -1,0 +1,273 @@
+version: "2.0"
+nlu:
+
+- intent: cumprimentar
+  examples: |
+    - ola
+    - bom dia
+    - boa tarde
+    - boa noite
+    - oi
+
+- intent: saldo_VR
+  examples: |
+    - saldo VR
+    - saldo vale
+    - saldo VA
+    - saldo vale refeicao
+    - saldo vale alimentacao
+    - qual o saldo do meu vale?
+    - quanto tenho disponivel de vale?
+    - qto tenho disponivel de vale?
+    - ql o salo do meu vale?
+    - saldo disponivel do vale
+    - quanto tenho disponivel?
+    - quanto eu tenho de vale?
+    - saldo do meu vale?
+    - qual o saldo do vr?
+    - qual o saldo do va?
+    - disponivel no vale?
+
+- intent: data_VR
+  examples: |
+    - entra VR
+    - entra VA
+    - entra vale refeicao
+    - entra vale alimentacao
+    - entra vale
+    - data vale refeicao
+    - data vale alimentacao
+    - data vr
+    - data va
+    - dia vale refeicao
+    - dia vale alimentacao
+    - dia vr
+    - dia va
+    - vem vr
+    - vem va
+    - vem vale
+    - vem vale refeicao
+    - vem vale alimentacao
+    - vr
+    - va
+    - quando entra o vr?
+    - quando entra o va?
+    - semana vr
+    - semana va
+    - semana vale refeicao
+    - semana vale alimentacao
+    - quando vai recarregar o vale?
+    - quando vai recarregar o VR?
+    - quando vai recarregar o VA?
+    - qdo recarrega o vale
+    - qdo recarrega o vr
+    - qtdo recarrega o va
+
+- intent: valor_VR
+  examples: |
+    - valor VR
+    - valor VA
+    - valor vale refeicao
+    - valor vale alimentacao
+    - valor vale
+    - quanto eu ganho de vale
+    - quanto eu ganho de VR
+    - quanto eu ganho de VA
+    - quanto ganhamos de vale
+    - qto ganhamos de vale
+    - qto eu ganho de vale
+    - qto eu ganho de VR
+    - qto eu ganho de VA
+    - valor do vale
+
+- intent: beneficios
+  examples: |
+    - beneficios
+    - quais beneficios a empresa tem?
+    - tem beneficio?
+    - beneficios?
+    - beneficios da empresa?
+    - temos beneficios na empressa?
+    - essa empresa tem beneficios?
+    - esta empresa tem beneficios?
+
+- intent: tempo_empresa
+  examples: |
+    - anos de empresa
+    - tempo de empresa
+    - quanto tempo estou na empresa?
+    - qto tempo estou nessa empresa?
+    - tempo de trabalho na empresa?
+    - meu periodo na empresa?
+    - a quanto tempo eu trabalho aqui
+    - tempo de casa
+    - qual o meu tempo de casa?
+
+- intent: valor_salario
+  examples: |
+    - qual o meu salario?
+    - quanto eu ganho?
+    - qto eu ganho?
+    - ql o meu salario?
+    - salario recebido
+    - salario
+    - gostaria de saber quanto eu ganho
+    - gostaria de saber qual o meu salario
+    - valor salario
+    - qual o valor do meu salario
+    - quanto e o valor do meu salario
+
+- intent: banco_horas
+  examples: |
+    - qual o meu saldo do banco de horas?
+    - saldo banco de horas
+    - tempo banco de horas
+    - periodo banco de horas
+    - tenho horas positivas?
+    - tenho horas negativas?
+    - horas positivas
+    - horas negativas
+    - banco de horas
+    - como estao minhas horas
+    - banco de oras
+    
+- intent: relatorios
+  examples: |
+    - relatorios
+    - relatorio
+    - relatorios disponiveis
+    - meus relatorios
+    - voce tem relatorios
+    - voce possui relatorios
+    - quero os relatorios
+    - qro os relatorios
+    - me mostre os relatorios
+    - me apresente os relatorios
+    - quais relatorios voce possui
+
+- intent: relatorio_colaborador
+
+- intent: relatorio_gestor_banco_horas
+
+- intent: relatorio_gestor_ferias
+
+#- intent: nlu_fallback
+
+- intent: saldo_ferias
+  examples: |
+    - saldo de ferias
+    - qual o meu saldo de ferias?
+    - ql o meu saldo de ferias?
+    - quanto tempo tenho de ferias
+    - qto tempo eu tenho de ferias?
+    - tempo de ferias
+    - dias de ferias
+    - quantos dias tenho de ferias?
+    - quanto tenho disponivel de ferias?
+    - disponibilidade de ferias
+    - saldo ferias
+    - periodo ferias
+    - data limite ferias
+    - qual o meu periodo de ferias
+    - minhas ferias
+
+- intent: pegar_ferias
+  examples: |
+    - quero pegar ferias
+    - gostaria de pegar ferias
+    - pegar ferias
+    - posso pegar ferias
+    - quando posso pegar ferias
+    - gostaria de tirar ferias
+    - quero ferias
+    - qro ferias
+    - eu quero pegar ferias
+    - quero pegar ferias, como faco?
+    - quero pegar minhas ferias
+    - preciso de ferias
+    - como faco para pegar ferias
+    - qdo posso pegar ferias
+    - necessito de ferias
+    - agende minhas ferias
+    - me da ferias
+
+- intent: despedida
+  examples: |
+    - ate mais
+    - tchau
+    - vejo voce mais tarde
+    - ate logo
+    - adeus
+    - bye
+    - falow
+    - flw
+
+- intent: agradecimento
+  examples: |
+    - obrigado
+    - obrigada
+    - brigado
+    - brigada
+    - show
+    - muito obrigad
+    - valeu
+    - vlw
+    - grato
+    - gratidao
+
+# - intent: affirm
+#   examples: |
+#     - yes
+#     - y
+#     - indeed
+#     - of course
+#     - that sounds good
+#     - correct
+# - intent: deny
+#   examples: |
+#     - no
+#     - n
+#     - never
+#     - I don't think so
+#     - don't like that
+#     - no way
+#     - not really
+# - intent: mood_great
+#   examples: |
+#     - perfect
+#     - great
+#     - amazing
+#     - feeling like a king
+#     - wonderful
+#     - I am feeling very good
+#     - I am great
+#     - I am amazing
+#     - I am going to save the world
+#     - super stoked
+#     - extremely good
+#     - so so perfect
+#     - so good
+#     - so perfect
+#     - good
+# - intent: mood_unhappy
+#   examples: |
+#     - my day was horrible
+#     - I am sad
+#     - I don't feel very well
+#     - I am disappointed
+#     - super sad
+#     - I'm so sad
+#     - sad
+#     - very sad
+#     - unhappy
+#     - not good
+#     - not very good
+#     - extremly sad
+#     - so saad
+#     - so sad
+# - intent: bot_challenge
+#   examples: |
+#     - are you a bot?
+#     - are you a human?
+#     - am I talking to a bot?
+#     - am I talking to a human?

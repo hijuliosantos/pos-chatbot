@@ -1,0 +1,188 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+
+# - story: happy path 1
+#   steps:
+#   - user: |
+#       hello there!
+#     intent: cumprimentar
+#   - action: utter_cumprimentar
+#   - user: |
+#       amazing
+#     intent: mood_great
+#   - action: utter_happy
+
+# - story: happy path 2
+#   steps:
+#   - user: |
+#       hello there!
+#     intent: cumprimentar
+#   - action: utter_cumprimentar
+#   - user: |
+#       amazing
+#     intent: mood_great
+#   - action: utter_happy
+#   - user: |
+#       bye-bye!
+#     intent: goodbye
+#   - action: utter_goodbye
+
+# - story: sad path 1
+#   steps:
+#   - user: |
+#       hello
+#     intent: cumprimentar
+#   - action: utter_cumprimentar
+#   - user: |
+#       not good
+#     intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - user: |
+#       yes
+#     intent: affirm
+#   - action: utter_happy
+
+# - story: sad path 2
+#   steps:
+#   - user: |
+#       hello
+#     intent: cumprimentar
+#   - action: utter_cumprimentar
+#   - user: |
+#       not good
+#     intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - user: |
+#       not really
+#     intent: deny
+#   - action: utter_goodbye
+
+# - story: sad path 3
+#   steps:
+#   - user: |
+#       hi
+#     intent: cumprimentar
+#   - action: utter_cumprimentar
+#   - user: |
+#       very terrible
+#     intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - user: |
+#       no
+#     intent: deny
+#   - action: utter_goodbye
+
+# - story: say goodbye
+#   steps:
+#   - user: |
+#       bye-bye!
+#     intent: goodbye
+#   - action: utter_goodbye
+
+# - story: bot challenge
+#   steps:
+#   - user: |
+#       are you a bot?
+#     intent: bot_challenge
+#   - action: utter_iamabot
+
+- story: say tchau
+  steps:
+  - user: |
+      tchau tchau
+    intent: despedida
+  - action: utter_despedida
+
+- story: say VR
+  steps:
+  - user: |
+      quando entra o vale?
+    intent: data_VR
+  - action: utter_data_VR
+  - user: |
+      e o valor?
+    intent: valor_VR
+  - action: utter_utter_valor_VR
+
+- story: say VR 2
+  steps:
+  - user: |
+      quando entra o VR?
+    intent: data_VR
+  - action: utter_data_VR
+  - user: |
+      valor do vale?
+    intent: valor_VR
+  - action: utter_utter_valor_VR
+
+- story: say VR 3
+  steps:
+  - user: |
+      quanto eu ganho de vale?
+    intent: valor_VR
+  - action: utter_utter_valor_VR
+
+- story: say VR 4
+  steps:
+  - user: |
+      qual o saldo vo vale?
+    intent: saldo_VR
+  - action: action_saldo_VR
+
+- story: say VR 5
+  steps:
+  - user: |
+      que dia entra o VR?
+    intent: data_VR
+  - action: utter_data_VR
+  - user: |
+      e o valor do vale?
+    intent: valor_VR
+  - action: utter_utter_valor_VR
+  - user: |
+      e o saldo?
+    intent: saldo_VR
+  - action: action_saldo_VR
+
+- story: beneficios
+  steps:
+  - user: |
+      quais beneficios da empresa?
+    intent: beneficios
+  - action: utter_beneficios
+
+- story: say saldo férias
+  steps:
+  - user: |
+      qual o meu saldo de férias?
+    intent: saldo_ferias
+  - action: action_saldo_ferias
+
+- story: say relatorios
+  steps:
+  - user: |
+      relatorios?
+    intent: action_relatorios
+  - action: action_action_relatorios
+  - user: |
+      relatorio_colaborador
+    intent: relatorio_colaborador
+  - action: action_relatorio_colaborador
+  - user: |
+      relatorio_gestor_banco_horas
+    intent: relatorio_gestor_banco_horas
+  - action: action_relatorio_gestor_banco_horas
+  - user: |
+      relatorio_gestor_ferias
+    intent: relatorio_gestor_ferias
+  - action: action_relatorio_gestor_ferias
+
+
+
+
+
