@@ -2,24 +2,29 @@ Este projeto consiste em um chatbot feito em rasa para um sistema de RH, onde, o
 
 Projeto foi desenvolvido com o Python 3.8 e utilizando as seguintes bibliotecas:
 > rasa
+> 
 > flask
+> 
 > flask-cors
 
 Verifique requirements.txt
 
 Para executar este projeto é necessário subir 3 servidores (abrir terminais, selecionar o enviroment do python e navegar até a pasta deste projeto):
 
-1º Subir o modelo do python através do seguinte comando:
+1º Subir o modelo do python através do seguinte comando (se o modelo não estiver criado, gerar ele através de "rasa train"):
 > rasa run --cors "*" --enable-api
-> Ele irá rodar em "http://localhost:5005"
+> 
+> *Ele irá rodar em "http://localhost:5005"
 
 2º Subir o servidor de ações do rasa:
 > rasa run actions
-> Ele irá rodar em "http://localhost:5055"
+> 
+> *Ele irá rodar em "http://localhost:5055"
 
 3º Subir o webservice desenvlvido com flask:
 > python webservice.py
-> Ele irá rodar em "http://localhost:5000"
+> 
+> ***Ele irá rodar em "http://localhost:5000"
 
 Com os 3 servidores onlines, abrir o arquivo "website/index.html" no navegador.
 
