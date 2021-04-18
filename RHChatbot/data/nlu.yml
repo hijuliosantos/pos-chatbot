@@ -1,10 +1,6 @@
 version: "2.0"
 nlu:
 
-- intent: hello_world
-  examples: |
-    - ola mundo
-
 - intent: cumprimentar
   examples: |
     - ola
@@ -22,6 +18,8 @@ nlu:
     - saldo vale alimentacao
     - qual o saldo do meu vale?
     - quanto tenho disponivel de vale?
+    - qto tenho disponivel de vale?
+    - ql o salo do meu vale?
     - saldo disponivel do vale
     - quanto tenho disponivel?
     - quanto eu tenho de vale?
@@ -61,6 +59,9 @@ nlu:
     - quando vai recarregar o vale?
     - quando vai recarregar o VR?
     - quando vai recarregar o VA?
+    - qdo recarrega o vale
+    - qdo recarrega o vr
+    - qtdo recarrega o va
 
 - intent: valor_VR
   examples: |
@@ -72,30 +73,49 @@ nlu:
     - quanto eu ganho de vale
     - quanto eu ganho de VR
     - quanto eu ganho de VA
+    - quanto ganhamos de vale
+    - qto ganhamos de vale
+    - qto eu ganho de vale
+    - qto eu ganho de VR
+    - qto eu ganho de VA
+    - valor do vale
 
 - intent: beneficios
   examples: |
     - beneficios
     - quais beneficios a empresa tem?
-    - tem beneficio
+    - tem beneficio?
     - beneficios?
     - beneficios da empresa?
+    - temos beneficios na empressa?
+    - essa empresa tem beneficios?
+    - esta empresa tem beneficios?
 
 - intent: tempo_empresa
   examples: |
     - anos de empresa
     - tempo de empresa
     - quanto tempo estou na empresa?
+    - qto tempo estou nessa empresa?
     - tempo de trabalho na empresa?
     - meu periodo na empresa?
-    - a quanto tempo eu trabalho aqui/
+    - a quanto tempo eu trabalho aqui
+    - tempo de casa
+    - qual o meu tempo de casa?
 
 - intent: valor_salario
   examples: |
     - qual o meu salario?
     - quanto eu ganho?
+    - qto eu ganho?
+    - ql o meu salario?
     - salario recebido
     - salario
+    - gostaria de saber quanto eu ganho
+    - gostaria de saber qual o meu salario
+    - valor salario
+    - qual o valor do meu salario
+    - quanto e o valor do meu salario
 
 - intent: banco_horas
   examples: |
@@ -108,6 +128,8 @@ nlu:
     - horas positivas
     - horas negativas
     - banco de horas
+    - como estao minhas horas
+    - banco de oras
     
 - intent: relatorios
   examples: |
@@ -118,16 +140,26 @@ nlu:
     - voce tem relatorios
     - voce possui relatorios
     - quero os relatorios
+    - qro os relatorios
+    - me mostre os relatorios
+    - me apresente os relatorios
+    - quais relatorios voce possui
 
 - intent: relatorio_colaborador
 
-- intent: relatorio_gestor
+- intent: relatorio_gestor_banco_horas
+
+- intent: relatorio_gestor_ferias
+
+#- intent: nlu_fallback
 
 - intent: saldo_ferias
   examples: |
     - saldo de ferias
     - qual o meu saldo de ferias?
+    - ql o meu saldo de ferias?
     - quanto tempo tenho de ferias
+    - qto tempo eu tenho de ferias?
     - tempo de ferias
     - dias de ferias
     - quantos dias tenho de ferias?
@@ -137,6 +169,7 @@ nlu:
     - periodo ferias
     - data limite ferias
     - qual o meu periodo de ferias
+    - minhas ferias
 
 - intent: pegar_ferias
   examples: |
@@ -147,19 +180,40 @@ nlu:
     - quando posso pegar ferias
     - gostaria de tirar ferias
     - quero ferias
-    - quero férias
+    - qro ferias
+    - eu quero pegar ferias
+    - quero pegar ferias, como faco?
+    - quero pegar minhas ferias
+    - preciso de ferias
+    - como faco para pegar ferias
+    - qdo posso pegar ferias
+    - necessito de ferias
+    - agende minhas ferias
+    - me da ferias
 
 - intent: despedida
   examples: |
     - ate mais
     - tchau
-    - xau
     - vejo voce mais tarde
     - ate logo
     - adeus
     - bye
     - falow
     - flw
+
+- intent: agradecimento
+  examples: |
+    - obrigado
+    - obrigada
+    - brigado
+    - brigada
+    - show
+    - muito obrigad
+    - valeu
+    - vlw
+    - grato
+    - gratidao
 
 # - intent: affirm
 #   examples: |

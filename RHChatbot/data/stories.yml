@@ -29,11 +29,6 @@ stories:
 #   - intent: deny
 #   - action: utter_goodbye
 
-- story: teste ola mundo
-  steps:
-  - intent: hello_world
-  - action: action_hello_world
-
 - story: hist tempo empresa
   steps:
   - intent: tempo_empresa
@@ -89,5 +84,7 @@ stories:
   - action: action_relatorios
   - intent: relatorio_colaborador
   - action: action_relatorio_colaborador
-  - intent: relatorio_gestor
-  - action: action_relatorio_gestor
+  - intent: relatorio_gestor_banco_horas
+  - action: action_relatorio_gestor_banco_horas
+  - intent: relatorio_gestor_ferias
+  - action: action_relatorio_gestor_ferias

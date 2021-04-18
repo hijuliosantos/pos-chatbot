@@ -12,17 +12,6 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import requests
 
-class ActionHelloWorld(Action):
-#
-    def name(self) -> Text:
-        return "action_hello_world"
-#
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Hello World bla bla! " + tracker.get_slot("colaborador"))
-#
-        return[]
 
 class ActionTempoEmpresa(Action):
 #
@@ -34,7 +23,7 @@ class ActionTempoEmpresa(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         r = requests.post('http://localhost:5000/tempoempresa', json={"data": tracker.get_slot("id_colaborador")})
-        dispatcher.utter_message(text='Você está trabalhando na empresa fazem ' + r.json()["v"] + ' dias.')
+        dispatcher.utter_message(text='Você está trabalhando na empresa faz(em) ' + r.json()["v"] + '.')
 #
         return[]
 
@@ -108,10 +97,10 @@ class ActionRelatorioColaborador(Action):
 #
         return[]
 
-class ActionRelatorioGestor(Action):
+class ActionRelatorioGestorBancoHoras(Action):
 #
     def name(self) -> Text:
-        return "action_relatorio_gestor"
+        return "action_relatorio_gestor_banco_horas"
 #
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -119,6 +108,23 @@ class ActionRelatorioGestor(Action):
 
         if tracker.get_slot("id_colaborador") == "1":
                 r = requests.post('http://localhost:5000/bancohorascolaboradores', json={"data": tracker.get_slot("id_colaborador")})
+                dispatcher.utter_message(text=r.json()["v"])
+        else:
+              dispatcher.utter_message(text="Estou sem respostas para a sua pergunta")  
+#
+        return[]
+
+class ActionRelatorioGestorFerias(Action):
+#
+    def name(self) -> Text:
+        return "action_relatorio_gestor_ferias"
+#
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        if tracker.get_slot("id_colaborador") == "1":
+                r = requests.post('http://localhost:5000/feriascolaboradores', json={"data": tracker.get_slot("id_colaborador")})
                 dispatcher.utter_message(text=r.json()["v"])
         else:
               dispatcher.utter_message(text="Estou sem respostas para a sua pergunta")  
@@ -136,9 +142,10 @@ class ActionRelatorios(Action):
 
         buttons = [{"title": "Informações colaborador", "payload": "/relatorio_colaborador"}]
         if (tracker.get_slot("id_colaborador") == "1"): # só para exemplo de gestor
-                buttons.append({"title": "Banco de horas colaboradores", "payload": "/relatorio_gestor"})
+                buttons.append({"title": "Banco de horas colaboradores", "payload": "/relatorio_gestor_banco_horas"})
+                buttons.append({"title": "Férias colaboradores", "payload": "/relatorio_gestor_ferias"})
 
-        dispatcher.utter_button_message("Relatórios disponíveis:", buttons)
+        dispatcher.utter_button_message( "Relatórios disponíveis:" if len(buttons) > 1 else "Relatório disponível:" , buttons)
         return[]
 
 

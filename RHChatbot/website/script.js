@@ -56,7 +56,7 @@ $(document).ready(function () {
 		$('.chatForm').toggle();
 		document.getElementById('chat-input').focus();
 		if (!fistClick){
-			setBotResponse([{recipient_id: "default", text: "Olá " + $("#usuarios option:selected" ).text().split(" ")[0] + "! Em que posso lhe ajudar?"}]);
+			setBotResponse([{recipient_id: $( "#usuarios option:selected" /*"default"*/ ).val(), text: "Olá " + $("#usuarios option:selected" ).text().split(" ")[0] + "! Em que posso lhe ajudar?"}]);
 			fistClick = true;
 		}
 
@@ -101,7 +101,7 @@ $(document).ready(function () {
 
 function setSlot(text, slotName) {
 	$.ajax({
-		url: 'http://localhost:5005/conversations/default/tracker/events?include_events=NONE', //  RASA API
+		url: 'http://localhost:5005/conversations/' + /*$( "#usuarios option:selected" ).val()*/ 'default' + '/tracker/events?include_events=NONE', //  RASA API
 		type: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -164,7 +164,8 @@ function selecionaUsuario(){
 			},
 			data: JSON.stringify({
 				"message": text,
-				"sender": "default"
+				"sender": $( "#usuarios option:selected" ).val()
+				//"sender": "default"
 			}),
 			success: function (data, textStatus, xhr) {
 				console.log(data);

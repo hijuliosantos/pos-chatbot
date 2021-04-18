@@ -1,7 +1,7 @@
 import datetime
 
 from requests.models import Response
-
+from dateutil import relativedelta as rdelta
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 
@@ -28,7 +28,7 @@ class Colaborador:
     self.data_maxima_ferias = data_maxima_ferias
     self.saldo_banco_horas = saldo_banco_horas
     self.salario = salario
-    self.tempo_empresa = (datetime.date.today() - self.data_admissao.date()).days
+    self.tempo_empresa = rdelta.relativedelta(datetime.date.today(), self.data_admissao.date())
 
 def base() -> dict:
     cols = dict()
@@ -65,6 +65,16 @@ def get_banco_horas_colaboradores():
     response = jsonify({'v': msg })
     return response
 
+@app.route('/feriascolaboradores', methods=['POST'])
+@cross_origin()
+def get_ferias_colaboradores():
+    msg = ""
+    for col in colaboradores:
+        msg += "Colaborador: " + colaboradores[col].nome + " - " + str(colaboradores[col].qtd_dias_ferias_dispoveis) + " dias para pegar até a data de " + str(colaboradores[col].data_maxima_ferias) + "<br>"
+
+    response = jsonify({'v': msg })
+    return response
+
 @app.route('/informacoescolaborador', methods=['POST'])
 @cross_origin()
 def get_informacoes_colaborador():
@@ -77,7 +87,8 @@ def get_informacoes_colaborador():
 @cross_origin()
 def get_tempo_empresa():
     content = request.json
-    response = jsonify({'v': str(colaboradores[int(content['data'])].tempo_empresa) })
+    
+    response = jsonify({'v': "{0.years} ano(s) e {0.months} mes(es)".format(colaboradores[int(content['data'])].tempo_empresa) })
     return response
 
 @app.route('/valorsalario', methods=['POST'])

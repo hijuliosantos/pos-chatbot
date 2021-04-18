@@ -7,17 +7,22 @@ rules:
   - intent: despedida
   - action: utter_despedida
 
+- rule: responda sempre que agradecer
+  steps:
+  - intent: agradecimento
+  - action: utter_agradecimento
+
 - rule: diga cumprimentar
   steps:
   - intent: cumprimentar
   - action: utter_cumprimentar
 
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+
 # - rule: Say 'I am a bot' anytime the user challenges
 #   steps:
 #   - intent: bot_challenge
 #   - action: utter_iamabot
-
-# - rule: Say VR
-#   steps:
-#   - intent: data_VR
-#   - action: utter_data_VR

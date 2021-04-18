@@ -174,9 +174,13 @@ stories:
     intent: relatorio_colaborador
   - action: action_relatorio_colaborador
   - user: |
-      relatorio_gestor
-    intent: relatorio_gestor
-  - action: action_relatorio_gestor
+      relatorio_gestor_banco_horas
+    intent: relatorio_gestor_banco_horas
+  - action: action_relatorio_gestor_banco_horas
+  - user: |
+      relatorio_gestor_ferias
+    intent: relatorio_gestor_ferias
+  - action: action_relatorio_gestor_ferias
 
 
 
